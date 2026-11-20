@@ -1,8 +1,15 @@
 import streamlit as st
 
-st.title("Conversor de temperatura")
-celsius = st.number_input("Grados celsius")
+st.title("Calculadora")
 
-farenheit = celsius * 9 / 5 + 32
+numero1 = st.number_input("Primer número", value=0.0)
+numero2 = st.number_input("Segundo número", value=0.0)
 
-st.write(f"{celsius} C son {farenheit} F")
+operacion = st.radio("Operación", ("Suma", "Resta"), horizontal=True)
+
+if operacion == "Suma":
+    resultado = numero1 + numero2
+else:
+    resultado = numero1 - numero2
+
+st.write(f"Resultado: **{resultado}**")
