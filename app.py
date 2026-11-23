@@ -7,7 +7,7 @@ numero2 = st.number_input("Segundo número", value=0.0)
 
 operacion = st.radio(
     "Operación",
-    ("Suma", "Resta", "Multiplicación", "División"),
+    ("Suma", "Resta", "Multiplicación", "División", "Residuo"),
     horizontal=True,
 )
 
@@ -17,11 +17,17 @@ elif operacion == "Resta":
     resultado = numero1 - numero2
 elif operacion == "Multiplicación":
     resultado = numero1 * numero2
-elif numero2 == 0:
-    st.error("No se puede dividir entre cero")
-    resultado = None
-else:
-    resultado = numero1 / numero2
 
-if resultado is not None:
-    st.write(f"Resultado: **{resultado}**")
+elif operacion == "División":
+    if numero2 == 0:
+        st.error("No se puede dividir entre cero")
+        resultado = None
+    else:
+        resultado = numero1 / numero2
+
+elif operacion == "Residuo":
+    if numero2 == 0:
+        st.error("No se puede calcular el residuo entre cero")
+        resultado = None
+    else:
+        resultado = numero1 % numero2
