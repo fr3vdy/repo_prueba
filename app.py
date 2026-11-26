@@ -33,5 +33,12 @@ elif operacion == "Residuo":
         resultado = numero1 % numero2
 
 elif operacion == "Potencia":
-    resultado = numero1 ** numero2
+    if numero1 == 0 and numero2 < 0:
+        st.error("No se puede elevar cero a un exponente negativo")
+        resultado = None
+    elif numero1 < 0 and not numero2.is_integer():
+        st.error("El exponente debe ser entero cuando la base es negativa")
+        resultado = None
+    else:
+        resultado = numero1 ** numero2
 
