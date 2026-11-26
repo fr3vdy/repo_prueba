@@ -31,3 +31,7 @@ elif operacion == "Residuo":
         resultado = None
     else:
         resultado = numero1 % numero2
+
+
+
+## Esto es un comentario 
