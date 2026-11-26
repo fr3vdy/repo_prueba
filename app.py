@@ -7,7 +7,7 @@ numero2 = st.number_input("Segundo número", value=0.0)
 
 operacion = st.radio(
     "Operación",
-    ("Suma", "Resta", "Multiplicación", "División", "Residuo"),
+    ("Suma", "Resta", "Multiplicación", "División", "Residuo", "Potencia"),
     horizontal=True,
 )
 
@@ -31,4 +31,14 @@ elif operacion == "Residuo":
         resultado = None
     else:
         resultado = numero1 % numero2
+
+elif operacion == "Potencia":
+    if numero1 == 0 and numero2 < 0:
+        st.error("No se puede elevar cero a un exponente negativo")
+        resultado = None
+    elif numero1 < 0 and not numero2.is_integer():
+        st.error("El exponente debe ser entero cuando la base es negativa")
+        resultado = None
+    else:
+        resultado = numero1 ** numero2
 
