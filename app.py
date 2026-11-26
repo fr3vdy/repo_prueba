@@ -32,6 +32,3 @@ elif operacion == "Residuo":
     else:
         resultado = numero1 % numero2
 
-
-
-## Esto es un comentario 
