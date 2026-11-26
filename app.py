@@ -7,7 +7,7 @@ numero2 = st.number_input("Segundo número", value=0.0)
 
 operacion = st.radio(
     "Operación",
-    ("Suma", "Resta", "Multiplicación", "División", "Residuo"),
+    ("Suma", "Resta", "Multiplicación", "División", "Residuo", "Potencia"),
     horizontal=True,
 )
 
@@ -31,4 +31,7 @@ elif operacion == "Residuo":
         resultado = None
     else:
         resultado = numero1 % numero2
+
+elif operacion == "Potencia":
+    resultado = numero1 ** numero2
 
